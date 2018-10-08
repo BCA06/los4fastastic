@@ -46,7 +46,7 @@
 				class="form-control" name="edicion1" id="edicion1"
 				placeholder="Introduce la edicón del cómic">
 		</div>
-		<button type="submit" class="btn btn-default">Modificar cómic</button>
+		<button type="submit" class="btn btn-default">Modificar cómics</button>
 	</form>
 
 </body>
