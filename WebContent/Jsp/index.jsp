@@ -30,5 +30,7 @@
                         </p>
                     <input type="hidden" name="opcion" value="addUser">
                 </form>
+  	
+  </tr>
 </body>
 </html>
