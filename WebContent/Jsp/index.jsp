@@ -9,7 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Listado de productos </h1>
+	<h1>Listado de productos</h1>
+	
 
 		<ul>
 			<c:forEach var="productos" items="${listadoProductos}" >
@@ -19,7 +20,15 @@
 				[Editorial : ${productos.editorial}]
 				</li>
 			</c:forEach>
-
 		</ul>
+        
+        
+       <form action="Menu" method="post">
+                  
+                  <p>
+                         <input type="submit"  value="Añadir comic" />
+                        </p>
+                    <input type="hidden" name="opcion" value="addUser">
+                </form>
 </body>
 </html>

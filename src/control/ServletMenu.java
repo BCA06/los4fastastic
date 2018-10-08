@@ -1,7 +1,6 @@
 package control;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -12,48 +11,46 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import modelo.Productos;
-import servicios.IServicioProducto;
-import servicios.ServicioProducto;
 
 /**
- * Servlet implementation class ServletMain
+ * Servlet implementation class ServletMenu
  */
-@WebServlet("/index.jsp")
-public class ServletMain extends HttpServlet {
-	
+@WebServlet(urlPatterns = {"/Menu"})
+public class ServletMenu extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	private IServicioProducto servicioProducto = new ServicioProducto();
-
     /**
-     * @see HttpServlet#HttpServlet()s
+     * @see HttpServlet#HttpServlet()
      */
-    public ServletMain() {
+    public ServletMenu() {
         super();
+        // TODO Auto-generated constructor stub
     }
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     	
-  
     	
-    	
-    	if(request.getContextPath().equals("/TiendaComics")){
+        String origen = request.getParameter("opcion");
 
-    		List<Productos> result = servicioProducto.mostrarProductos();
-    	    request.setAttribute("listadoProductos", result);
-            RequestDispatcher view = request.getRequestDispatcher("/Jsp/index.jsp");
-            view.forward(request, response);
-    	}
+        if(origen.contentEquals("addUser")){
+        	processMenu(request,response);
+        }
     }
-   
+    
+    protected void processMenu (HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+    	RequestDispatcher view;
+    	view = request.getRequestDispatcher("/Jsp/FormularioAddComic.jsp");
+    	view.forward(request, response);
+    }
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
         processRequest(request, response);
-
 	}
 
 	/**
@@ -61,7 +58,9 @@ public class ServletMain extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-        processRequest(request, response);
+		doGet(request, response);
 	}
+	
+	
 
 }
