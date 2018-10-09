@@ -15,4 +15,11 @@ public class ServicioProducto implements IServicioProducto {
 		return daoProductos.mostrarProductos();
 	}
 
+	@Override
+	public void modificarComic(Productos p) {
+		// TODO Auto-generated method stub
+		this.daoProductos.modificarComic(p);
+	}
+	
+
 }

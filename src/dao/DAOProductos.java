@@ -20,5 +20,10 @@ public class DAOProductos implements IDAOProductos {
 		listadoProductos.add(new Productos(125.22,"Los pitufos","RAMA"));
 		return (listadoProductos);
 	}
+	
+	public void modificarComic(Productos p) {
+		
+		
+	}
 
 }
