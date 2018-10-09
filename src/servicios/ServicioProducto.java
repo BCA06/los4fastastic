@@ -21,5 +21,4 @@ public class ServicioProducto implements IServicioProducto {
 		this.daoProductos.modificarComic(p);
 	}
 	
-
 }

@@ -35,9 +35,13 @@ public class ServletMenu extends HttpServlet {
 
         if(origen.contentEquals("addUser")){
         	processMenu(request,response);
+<<<<<<< HEAD
         }else if (origen.contentEquals("modificar")) {
 			modificar(request,response);
 		}
+=======
+        }
+>>>>>>> c7c47735fdb62e5f0e83d09df1826626d2f601d2
     }
     
     protected void processMenu (HttpServletRequest request, HttpServletResponse response)
@@ -63,10 +67,14 @@ public class ServletMenu extends HttpServlet {
 		doGet(request, response);
 	}
 	
+<<<<<<< HEAD
 	protected void modificar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher view;
 		view = request.getRequestDispatcher("Jsp/modificar.jsp");
 		view.forward(request, response);
 	}
+=======
+	
+>>>>>>> c7c47735fdb62e5f0e83d09df1826626d2f601d2
 
 }

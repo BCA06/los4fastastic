@@ -25,5 +25,4 @@ public class DAOProductos implements IDAOProductos {
 		
 		
 	}
-
 }
